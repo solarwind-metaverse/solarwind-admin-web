@@ -1,0 +1,19 @@
+.star-admin {
+  margin-top: 10px;
+  display: flex;
+}
+
+.stars-list {
+  width: 200px;
+}
+
+.stars-list .star-name {
+  margin-bottom: 2px;
+}
+
+.stars-list .selected-star {
+  font-weight: bold;
+}
+
+.star-details {
+}

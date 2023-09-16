@@ -1,0 +1,23 @@
+<div>
+  <button (click)="increment()">Increment</button>
+
+<div>Current Counts: {{ selectedStarId$ | async }}</div>
+
+<button (click)="decrement()">Decrement</button>
+
+</div>
+<div class="star-admin">
+  <div class="stars-list">
+    <div *ngFor="let star of stars" class="star-name">
+      <a [routerLink]="['/stars', star.id]" *ngIf="(selectedStarId$ | async) !== star.id; else starName">
+        {{ star.name }}
+      </a>
+      <ng-template #starName>
+        <span class="selected-star">{{ star.name }}</span>
+      </ng-template>
+    </div>
+  </div>
+  <div class="stars-details">
+    <router-outlet></router-outlet>
+  </div>
+</div>
